@@ -6,11 +6,11 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
-import EstudioTatuajes.controlador.AltaClienteControlador;
-import EstudioTatuajes.controlador.AltaClienteControladorInterfaz;
+import EstudioTatuajes.controlador.CancelarCitaControlador;
+import EstudioTatuajes.controlador.CancelarCitaControlador;
 import javax.swing.JButton;
 
-public class AltaClienteVista extends JPanel {
+public class CancelarCitaVista extends JPanel {
 
     private static final long serialVersionUID = 1L;
     private JTextField dniTestField;
@@ -18,16 +18,16 @@ public class AltaClienteVista extends JPanel {
     private JTextField edadtextField;
     private JTextField telefonotextField;
     private JTextField correotextField;
-    private JTextField senalDineroField; // Nuevo campo para la señal de dinero
-    private JTextField codigoClienteField; // Nuevo campo para el código de cliente
+    private JTextField senalDineroField; // Campo para la señal de dinero
+    private JTextField codigoClienteField; // Campo para el código de cliente
 
     /**
      * Create the panel.
      */
-    public AltaClienteVista() {
+    public CancelarCitaVista() {
         setLayout(null);
 
-        JLabel TituloLabel = new JLabel("Alta cliente");
+        JLabel TituloLabel = new JLabel("Cancelar Cita");
         TituloLabel.setFont(new Font("Stencil", Font.PLAIN, 18));
         TituloLabel.setBounds(165, 22, 126, 28);
         add(TituloLabel);
@@ -52,84 +52,79 @@ public class AltaClienteVista extends JPanel {
         telefonoLabel.setBounds(48, 169, 90, 22);
         add(telefonoLabel);
 
-        JLabel senalDineroLabel = new JLabel("Señal Dinero:"); // Etiqueta para la señal de dinero
+        JLabel senalDineroLabel = new JLabel("Señal Dinero:");
         senalDineroLabel.setBounds(48, 236, 90, 22);
         add(senalDineroLabel);
 
-        JLabel codigoClienteLabel = new JLabel("Código Cliente:"); // Etiqueta para el código de cliente
+        JLabel codigoClienteLabel = new JLabel("Código Cliente:");
         codigoClienteLabel.setBounds(48, 269, 90, 22);
         add(codigoClienteLabel);
 
         dniTestField = new JTextField();
-        dniTestField.setBounds(118, 71, 86, 20);
+        dniTestField.setBounds(148, 71, 86, 20);
         add(dniTestField);
         dniTestField.setColumns(10);
 
         nombretextField = new JTextField();
-        nombretextField.setBounds(118, 103, 86, 20);
+        nombretextField.setBounds(148, 103, 86, 20);
         add(nombretextField);
         nombretextField.setColumns(10);
 
         edadtextField = new JTextField();
-        edadtextField.setBounds(118, 137, 86, 20);
+        edadtextField.setBounds(148, 137, 86, 20);
         add(edadtextField);
         edadtextField.setColumns(10);
 
         telefonotextField = new JTextField();
-        telefonotextField.setBounds(118, 169, 86, 20);
+        telefonotextField.setBounds(148, 169, 86, 20);
         add(telefonotextField);
         telefonotextField.setColumns(10);
 
         correotextField = new JTextField();
-        correotextField.setBounds(118, 203, 86, 20);
+        correotextField.setBounds(148, 203, 86, 20);
         add(correotextField);
         correotextField.setColumns(10);
 
-        senalDineroField = new JTextField(); // Campo de entrada para la señal de dinero
+        senalDineroField = new JTextField();
         senalDineroField.setBounds(148, 237, 86, 20);
         add(senalDineroField);
         senalDineroField.setColumns(10);
 
-        codigoClienteField = new JTextField(); // Campo de entrada para el código de cliente
+        codigoClienteField = new JTextField();
         codigoClienteField.setBounds(148, 270, 86, 20);
         add(codigoClienteField);
         codigoClienteField.setColumns(10);
 
-        JButton altaClienteButton = new JButton("ALTA");
-        altaClienteButton.setBounds(187, 320, 89, 23);
-        add(altaClienteButton);
+        JButton cancelarCitaButton = new JButton("Cancelar Cita");
+        cancelarCitaButton.setBounds(187, 320, 120, 23);
+        add(cancelarCitaButton);
 
-        altaClienteButton.addActionListener(new ActionListener() {
-
+        cancelarCitaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Dando alta cliente...");
-                String dni = dniTestField.getText();
-                String nombre = nombretextField.getText();
-                String edad = edadtextField.getText();
-                String telefono = telefonotextField.getText();
-                String correo = correotextField.getText();
-                
-                // Verificar si los campos de señal de dinero y código de cliente están vacíos
-                double senalDinero = 0.0;
-                int codigoCliente = 0;
+                System.out.println("Cancelando cita...");
                 try {
-                    if (!senalDineroField.getText().isEmpty()) {
-                        senalDinero = Double.parseDouble(senalDineroField.getText());
+                    String dni = dniTestField.getText();
+                    String nombre = nombretextField.getText();
+                    String edad = edadtextField.getText();
+                    String telefono = telefonotextField.getText();
+                    String correo = correotextField.getText();
+
+                    // Validar si el campo de señal de dinero está vacío
+                    String senalDineroText = senalDineroField.getText().trim();
+                    double senalDinero = 0; // Valor predeterminado en caso de campo vacío
+                    if (!senalDineroText.isEmpty()) { // Verificar si el texto no está vacío
+                        senalDinero = Double.parseDouble(senalDineroText);
                     }
-                    if (!codigoClienteField.getText().isEmpty()) {
-                        codigoCliente = Integer.parseInt(codigoClienteField.getText());
-                    }
+
+                    int codigoCliente = Integer.parseInt(codigoClienteField.getText());
+
+                    CancelarCitaControlador cancelarCita = new CancelarCitaControlador();
+                    cancelarCita.cancelarCita(dni, nombre, edad, telefono, correo, senalDinero, codigoCliente);
                 } catch (NumberFormatException ex) {
-                    ex.printStackTrace();
                     System.out.println("Error: Asegúrate de que todos los campos numéricos estén correctamente llenados.");
-                    return; // Salir del método si hay un error de conversión
                 }
-
-                AltaClienteControladorInterfaz altaCliente = new AltaClienteControlador();
-                altaCliente.altaCliente(dni, nombre, edad, telefono, correo, senalDinero, codigoCliente);
             }
-
         });
     }
 }
