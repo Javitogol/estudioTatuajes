@@ -29,7 +29,7 @@ public class CancelarCitaVista extends JPanel {
 
         JLabel TituloLabel = new JLabel("Cancelar Cita");
         TituloLabel.setFont(new Font("Stencil", Font.PLAIN, 18));
-        TituloLabel.setBounds(165, 22, 126, 28);
+        TituloLabel.setBounds(148, 22, 186, 31);
         add(TituloLabel);
 
         JLabel dniLabel = new JLabel("DNI:");

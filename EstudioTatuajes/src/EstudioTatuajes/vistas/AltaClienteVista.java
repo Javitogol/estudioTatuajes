@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 import EstudioTatuajes.controlador.AltaClienteControlador;
 import EstudioTatuajes.controlador.AltaClienteControladorInterfaz;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class AltaClienteVista extends JPanel {
 
@@ -33,71 +34,76 @@ public class AltaClienteVista extends JPanel {
         add(TituloLabel);
 
         JLabel dniLabel = new JLabel("DNI:");
-        dniLabel.setBounds(48, 70, 90, 22);
+        dniLabel.setBounds(36, 70, 90, 22);
         add(dniLabel);
 
         JLabel nombreLabel = new JLabel("Nombre:");
-        nombreLabel.setBounds(48, 103, 90, 22);
+        nombreLabel.setBounds(36, 103, 90, 22);
         add(nombreLabel);
 
         JLabel EdadLabel = new JLabel("Edad:");
-        EdadLabel.setBounds(48, 136, 90, 22);
+        EdadLabel.setBounds(36, 136, 90, 22);
         add(EdadLabel);
 
         JLabel correoLabel = new JLabel("Correo:");
-        correoLabel.setBounds(48, 202, 90, 22);
+        correoLabel.setBounds(36, 203, 90, 22);
         add(correoLabel);
 
         JLabel telefonoLabel = new JLabel("Telefono:");
-        telefonoLabel.setBounds(48, 169, 90, 22);
+        telefonoLabel.setBounds(36, 169, 90, 22);
         add(telefonoLabel);
 
         JLabel senalDineroLabel = new JLabel("Señal Dinero:"); // Etiqueta para la señal de dinero
-        senalDineroLabel.setBounds(48, 236, 90, 22);
+        senalDineroLabel.setBounds(36, 236, 90, 22);
         add(senalDineroLabel);
 
         JLabel codigoClienteLabel = new JLabel("Código Cliente:"); // Etiqueta para el código de cliente
-        codigoClienteLabel.setBounds(48, 269, 90, 22);
+        codigoClienteLabel.setBounds(36, 268, 90, 22);
         add(codigoClienteLabel);
 
         dniTestField = new JTextField();
-        dniTestField.setBounds(118, 71, 86, 20);
+        dniTestField.setBounds(128, 71, 86, 20);
         add(dniTestField);
         dniTestField.setColumns(10);
 
         nombretextField = new JTextField();
-        nombretextField.setBounds(118, 103, 86, 20);
+        nombretextField.setBounds(128, 103, 86, 20);
         add(nombretextField);
         nombretextField.setColumns(10);
 
         edadtextField = new JTextField();
-        edadtextField.setBounds(118, 137, 86, 20);
+        edadtextField.setBounds(128, 137, 86, 20);
         add(edadtextField);
         edadtextField.setColumns(10);
 
         telefonotextField = new JTextField();
-        telefonotextField.setBounds(118, 169, 86, 20);
+        telefonotextField.setBounds(128, 170, 86, 20);
         add(telefonotextField);
         telefonotextField.setColumns(10);
 
         correotextField = new JTextField();
-        correotextField.setBounds(118, 203, 86, 20);
+        correotextField.setBounds(128, 204, 86, 20);
         add(correotextField);
         correotextField.setColumns(10);
 
         senalDineroField = new JTextField(); // Campo de entrada para la señal de dinero
-        senalDineroField.setBounds(148, 237, 86, 20);
+        senalDineroField.setBounds(128, 237, 86, 20);
         add(senalDineroField);
         senalDineroField.setColumns(10);
 
         codigoClienteField = new JTextField(); // Campo de entrada para el código de cliente
-        codigoClienteField.setBounds(148, 270, 86, 20);
+        codigoClienteField.setBounds(128, 269, 86, 20);
         add(codigoClienteField);
         codigoClienteField.setColumns(10);
 
         JButton altaClienteButton = new JButton("ALTA");
         altaClienteButton.setBounds(187, 320, 89, 23);
         add(altaClienteButton);
+        
+        JLabel ImagenAltaClienteLabel = new JLabel("\r\n");
+        ImagenAltaClienteLabel.setIcon(new ImageIcon(System.getProperty("user.home") + "\\git\\estudioTataujes\\EstudioTatuajes\\IMG\\fotoEmpresa (1).jpg)"));
+        ImagenAltaClienteLabel.setBounds(270, 59, 190, 250);
+        add(ImagenAltaClienteLabel);
 
         altaClienteButton.addActionListener(new ActionListener() {
 
@@ -110,7 +116,6 @@ public class AltaClienteVista extends JPanel {
                 String telefono = telefonotextField.getText();
                 String correo = correotextField.getText();
                 
-                // Verificar si los campos de señal de dinero y código de cliente están vacíos
                 double senalDinero = 0.0;
                 int codigoCliente = 0;
                 try {
@@ -123,7 +128,7 @@ public class AltaClienteVista extends JPanel {
                 } catch (NumberFormatException ex) {
                     ex.printStackTrace();
                     System.out.println("Error: Asegúrate de que todos los campos numéricos estén correctamente llenados.");
-                    return; // Salir del método si hay un error de conversión
+                    return;
                 }
 
                 AltaClienteControladorInterfaz altaCliente = new AltaClienteControlador();

@@ -76,6 +76,40 @@ public class APIModelo {
             }
         }
     }
+    
+    public void altaTatuador(String dni, String nombre, int experiencia, String estilo, boolean disponibilidad,
+            String telefono, String correo, int codigoTatuador, String fechaInicio, String fechaFin) {
+        Tatuador tatuador = new Tatuador(nombre, dni, experiencia, estilo, disponibilidad, telefono, correo, codigoTatuador, fechaInicio, fechaFin);
+        estudio.AnadirTatuador(tatuador);
+    }
+       
 
+	public void asignarCita(String dni, String fecha, String hora) {
+		 ArrayList<Cliente> clientes = estudio.consultaCliente();
+	        
+	        for (Cliente cliente : clientes) {
+	            if (cliente.getDni().equals(dni)) {
+	                Citas nuevaCita = new Citas(fecha, hora);
+	                cliente.addCita(nuevaCita); 
+	                System.out.println("Cita asignada para el cliente con DNI: " + dni);
+	                break;
+	            }
+	        }
+	    }
+	
+	public void mostrarDatosTatuador(String dni, String nombre, int experiencia, String estilo, boolean disponibilidad,
+	        String telefono, String correo, int codigoTatuador, String fechaInicio, String fechaFin) {
+	    System.out.println("Datos del tatuador:");
+	    System.out.println("DNI: " + dni);
+	    System.out.println("Nombre: " + nombre);
+	    System.out.println("Experiencia: " + experiencia);
+	    System.out.println("Estilo: " + estilo);
+	    System.out.println("Disponibilidad: " + disponibilidad);
+	    System.out.println("Teléfono: " + telefono);
+	    System.out.println("Correo: " + correo);
+	    System.out.println("Código Tatuador: " + codigoTatuador);
+	    System.out.println("Fecha de inicio: " + fechaInicio);
+	    System.out.println("Fecha de fin: " + fechaFin);
+	}
 
 }

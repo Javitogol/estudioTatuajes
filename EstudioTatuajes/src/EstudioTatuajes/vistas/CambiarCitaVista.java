@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import EstudioTatuajes.controlador.CambiarCitaControlador;
-import EstudioTatuajes.controlador.CambiarCitaControlador;
 import javax.swing.JButton;
 
 public class CambiarCitaVista extends JPanel {
@@ -18,10 +17,10 @@ public class CambiarCitaVista extends JPanel {
     private JTextField edadtextField;
     private JTextField telefonotextField;
     private JTextField correotextField;
-    private JTextField senalDineroField; // Campo para la señal de dinero
-    private JTextField codigoClienteField; // Campo para el código de cliente
-    private JTextField nuevaFechaCitaField; // Campo para la nueva fecha de la cita
-    private JTextField nuevaHoraCitaField; // Campo para la nueva hora de la cita
+    private JTextField senalDineroField; 
+    private JTextField codigoClienteField; 
+    private JTextField nuevaFechaCitaField; 
+    private JTextField nuevaHoraCitaField; 
 
     /**
      * Create the panel.
