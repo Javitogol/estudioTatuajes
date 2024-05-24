@@ -112,4 +112,12 @@ public class APIModelo {
 	    System.out.println("Fecha de fin: " + fechaFin);
 	}
 
+	public void marcarEstadoTatuador(int codigoTatuador, String nuevoEstado) {
+	    estudio.marcarEstadoTatuador(codigoTatuador, nuevoEstado);
+	}
+	
+	 public void eliminarTatuador(int codigoTatuador) {
+	        estudio.eliminarTatuador(codigoTatuador);
+	    }
+
 }

@@ -51,23 +51,19 @@ public class MarcarEstadoTatuadorVista extends JPanel {
         marcarEstadoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Obtener el código del tatuador y el nuevo estado
                 String codigoTatuador = codigoTatuadorField.getText();
                 String nuevoEstado = estadoTextField.getText();
 
-                // Verificar si los campos no están vacíos
                 if (!codigoTatuador.isEmpty() && !nuevoEstado.isEmpty()) {
                     try {
-                        // Llamar al método del controlador para actualizar el estado del tatuador
-                        MarcarEstadoTatuadorControlador.marcarEstadoTatuador(Integer.parseInt(codigoTatuador), nuevoEstado);
+                        MarcarEstadoTatuadorControlador marcarEstadoTatuadorControlador = new MarcarEstadoTatuadorControlador();
+						marcarEstadoTatuadorControlador.marcarEstadoTatuador(Integer.parseInt(codigoTatuador), nuevoEstado);
 
-                        // Mostrar un mensaje de éxito
                         System.out.println("Estado del tatuador marcado correctamente.");
                     } catch (NumberFormatException ex) {
                         System.out.println("Error: El código del tatuador debe ser un número.");
                     }
                 } else {
-                    // Mostrar un mensaje de error si algún campo está vacío
                     System.out.println("Por favor, completa todos los campos.");
                 }
             }

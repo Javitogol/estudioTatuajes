@@ -17,9 +17,6 @@ public class MostrarDatosTatuadorVista extends JPanel {
     private JTextField experienciatextField;
     private JTextField estilotextField;
     private JTextField telefonotextField;
-    private JTextField correotextField;
-    private JTextField fechaInicioField;
-    private JTextField fechaFinField;
     private JTextField codigoTatuadorField;
 
     /**
@@ -28,10 +25,10 @@ public class MostrarDatosTatuadorVista extends JPanel {
     public MostrarDatosTatuadorVista() {
         setLayout(null);
 
-        JLabel TituloLabel = new JLabel("Alta Tatuador");
-        TituloLabel.setFont(new Font("Stencil", Font.PLAIN, 18));
-        TituloLabel.setBounds(165, 22, 126, 28);
-        add(TituloLabel);
+        JLabel MostrarDatosTatuadorLabel = new JLabel("Mostrar datos ");
+        MostrarDatosTatuadorLabel.setFont(new Font("Stencil", Font.PLAIN, 18));
+        MostrarDatosTatuadorLabel.setBounds(153, 21, 209, 28);
+        add(MostrarDatosTatuadorLabel);
 
         JLabel dniLabel = new JLabel("DNI:");
         dniLabel.setBounds(48, 70, 90, 22);
@@ -53,20 +50,8 @@ public class MostrarDatosTatuadorVista extends JPanel {
         telefonoLabel.setBounds(48, 202, 90, 22);
         add(telefonoLabel);
 
-        JLabel correoLabel = new JLabel("Correo:");
-        correoLabel.setBounds(48, 235, 90, 22);
-        add(correoLabel);
-
-        JLabel fechaInicioLabel = new JLabel("Fecha Inicio:");
-        fechaInicioLabel.setBounds(48, 268, 90, 22);
-        add(fechaInicioLabel);
-
-        JLabel fechaFinLabel = new JLabel("Fecha Fin:");
-        fechaFinLabel.setBounds(48, 301, 90, 22);
-        add(fechaFinLabel);
-
         JLabel codigoTatuadorLabel = new JLabel("Código Tatuador:");
-        codigoTatuadorLabel.setBounds(48, 334, 90, 22);
+        codigoTatuadorLabel.setBounds(48, 235, 90, 22);
         add(codigoTatuadorLabel);
 
         dniTestField = new JTextField();
@@ -94,47 +79,29 @@ public class MostrarDatosTatuadorVista extends JPanel {
         add(telefonotextField);
         telefonotextField.setColumns(10);
 
-        correotextField = new JTextField();
-        correotextField.setBounds(148, 235, 86, 20);
-        add(correotextField);
-        correotextField.setColumns(10);
-
-        fechaInicioField = new JTextField();
-        fechaInicioField.setBounds(148, 268, 86, 20);
-        add(fechaInicioField);
-        fechaInicioField.setColumns(10);
-
-        fechaFinField = new JTextField();
-        fechaFinField.setBounds(148, 301, 86, 20);
-        add(fechaFinField);
-        fechaFinField.setColumns(10);
-
         codigoTatuadorField = new JTextField();
-        codigoTatuadorField.setBounds(148, 334, 86, 20);
+        codigoTatuadorField.setBounds(148, 236, 86, 20);
         add(codigoTatuadorField);
         codigoTatuadorField.setColumns(10);
 
-        JButton altaTatuadorButton = new JButton("ALTA");
-        altaTatuadorButton.setBounds(187, 370, 89, 23);
-        add(altaTatuadorButton);
+        JButton MostrarDatosButton = new JButton("MOSTRAR DATOS");
+        MostrarDatosButton.setBounds(165, 302, 140, 22);
+        add(MostrarDatosButton);
 
-        altaTatuadorButton.addActionListener(new ActionListener() {
+        MostrarDatosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    System.out.println("Dando alta tatuador...");
+                    System.out.println("Mostrando datos tatuador...");
                     String dni = dniTestField.getText();
                     String nombre = nombretextField.getText();
                     int experiencia = Integer.parseInt(experienciatextField.getText());
                     String estilo = estilotextField.getText();
                     boolean disponibilidad = true; 
                     String telefono = telefonotextField.getText();
-                    String correo = correotextField.getText();
-                    String fechaInicio = fechaInicioField.getText();
-                    String fechaFin = fechaFinField.getText();
                     int codigoTatuador = Integer.parseInt(codigoTatuadorField.getText());
 
-                    Tatuador tatuador = new Tatuador(nombre, dni, experiencia, estilo, disponibilidad, telefono, correo, codigoTatuador, fechaInicio, fechaFin);
+                    Tatuador tatuador = new Tatuador(nombre, dni, experiencia, estilo, disponibilidad, telefono, telefono, codigoTatuador, telefono, telefono );
                     tatuador.altaTatuador();
                 } catch (NumberFormatException ex) {
                     System.out.println("Error en la conversión de números: " + ex.getMessage());

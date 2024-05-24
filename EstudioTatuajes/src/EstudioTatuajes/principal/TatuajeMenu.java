@@ -6,12 +6,16 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
+import EstudioTatuajes.controlador.EliminarTatuadorControlador;
 import EstudioTatuajes.vistas.AltaClienteVista;
 import EstudioTatuajes.vistas.AltaTatuadorVista;
 import EstudioTatuajes.vistas.AsignarCitaVista;
 import EstudioTatuajes.vistas.CambiarCitaVista;
 import EstudioTatuajes.vistas.CancelarCitaVista; 
 import EstudioTatuajes.vistas.ConsultaVista;
+import EstudioTatuajes.vistas.MarcarEstadoTatuadorVista;
 import EstudioTatuajes.vistas.MostrarDatosTatuadorVista;
 import EstudioTatuajes.vistas.PonerResenaVista;
 import javax.swing.JLabel;
@@ -142,6 +146,18 @@ public class TatuajeMenu extends JFrame implements ActionListener {
             setContentPane(mostrarDatosTatuadorVista);
             revalidate();
             repaint();
+        } else if (e.getSource() == marcarEstadoTatuadorMenuItem) {
+            System.out.println("Marcar Estado Tatuador");
+            MarcarEstadoTatuadorVista marcarEstadoTatuadorVista = new MarcarEstadoTatuadorVista(); 
+            setContentPane(marcarEstadoTatuadorVista); 
+            revalidate(); 
+            repaint(); 
+        } else if (e.getSource() == eliminarTatuadorMenuItem) {
+            System.out.println("Eliminar Tatuador");
+            int codigoTatuador = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el código del tatuador a eliminar:"));
+            EliminarTatuadorControlador controlador = new EliminarTatuadorControlador();
+            EliminarTatuadorControlador.eliminarTatuador(codigoTatuador);
+            JOptionPane.showMessageDialog(null, "Tatuador eliminado correctamente.");
         }
 
 
