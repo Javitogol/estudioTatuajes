@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import EstudioTatuajes.modelo.Tatuador;
+import javax.swing.ImageIcon;
 
 public class AltaTatuadorVista extends JPanel {
 
@@ -117,6 +118,11 @@ public class AltaTatuadorVista extends JPanel {
         JButton altaTatuadorButton = new JButton("ALTA");
         altaTatuadorButton.setBounds(187, 370, 89, 23);
         add(altaTatuadorButton);
+        
+        JLabel PrintAltaLabel = new JLabel("");
+        PrintAltaLabel.setIcon(new ImageIcon("C:\\Users\\Javi\\Downloads\\cuchillos (1).jpg"));
+        PrintAltaLabel.setBounds(308, 83, 166, 256);
+        add(PrintAltaLabel);
 
         altaTatuadorButton.addActionListener(new ActionListener() {
             @Override

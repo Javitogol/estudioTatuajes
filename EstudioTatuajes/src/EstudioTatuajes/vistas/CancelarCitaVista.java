@@ -7,7 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import EstudioTatuajes.controlador.CancelarCitaControlador;
-import EstudioTatuajes.controlador.CancelarCitaControlador;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class CancelarCitaVista extends JPanel {
@@ -18,8 +19,8 @@ public class CancelarCitaVista extends JPanel {
     private JTextField edadtextField;
     private JTextField telefonotextField;
     private JTextField correotextField;
-    private JTextField senalDineroField; // Campo para la señal de dinero
-    private JTextField codigoClienteField; // Campo para el código de cliente
+    private JTextField senalDineroField; 
+    private JTextField codigoClienteField; 
 
     /**
      * Create the panel.
@@ -98,6 +99,11 @@ public class CancelarCitaVista extends JPanel {
         JButton cancelarCitaButton = new JButton("Cancelar Cita");
         cancelarCitaButton.setBounds(187, 320, 120, 23);
         add(cancelarCitaButton);
+        
+        JLabel PrintCancelarCitaLabel = new JLabel("");
+        PrintCancelarCitaLabel.setIcon(new ImageIcon(System.getProperty("user.home") + "\\git\\estudioTataujes\\EstudioTatuajes\\IMG\\CuchilloCaraChica (1).jpg"));
+        PrintCancelarCitaLabel.setBounds(305, 64, 170, 239);
+        add(PrintCancelarCitaLabel);
 
         cancelarCitaButton.addActionListener(new ActionListener() {
             @Override
@@ -110,10 +116,10 @@ public class CancelarCitaVista extends JPanel {
                     String telefono = telefonotextField.getText();
                     String correo = correotextField.getText();
 
-                    // Validar si el campo de señal de dinero está vacío
+
                     String senalDineroText = senalDineroField.getText().trim();
-                    double senalDinero = 0; // Valor predeterminado en caso de campo vacío
-                    if (!senalDineroText.isEmpty()) { // Verificar si el texto no está vacío
+                    double senalDinero = 0; 
+                    if (!senalDineroText.isEmpty()) { 
                         senalDinero = Double.parseDouble(senalDineroText);
                     }
 

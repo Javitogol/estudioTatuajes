@@ -61,7 +61,6 @@ public class AsignarCitaVista extends JPanel {
                 String fecha = fechaTextField.getText();
                 String hora = horaTextField.getText();
                 
-                // Llamar al método de la APIModelo para asignar la cita
                 APIModelo.getIntancia().asignarCita(dni, fecha, hora);
             }
         });

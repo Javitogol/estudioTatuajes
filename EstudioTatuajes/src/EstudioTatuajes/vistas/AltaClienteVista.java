@@ -19,8 +19,8 @@ public class AltaClienteVista extends JPanel {
     private JTextField edadtextField;
     private JTextField telefonotextField;
     private JTextField correotextField;
-    private JTextField senalDineroField; // Nuevo campo para la señal de dinero
-    private JTextField codigoClienteField; // Nuevo campo para el código de cliente
+    private JTextField senalDineroField; 
+    private JTextField codigoClienteField; 
 
     /**
      * Create the panel.
@@ -53,11 +53,11 @@ public class AltaClienteVista extends JPanel {
         telefonoLabel.setBounds(36, 169, 90, 22);
         add(telefonoLabel);
 
-        JLabel senalDineroLabel = new JLabel("Señal Dinero:"); // Etiqueta para la señal de dinero
+        JLabel senalDineroLabel = new JLabel("Señal Dinero:"); 
         senalDineroLabel.setBounds(36, 236, 90, 22);
         add(senalDineroLabel);
 
-        JLabel codigoClienteLabel = new JLabel("Código Cliente:"); // Etiqueta para el código de cliente
+        JLabel codigoClienteLabel = new JLabel("Código Cliente:"); 
         codigoClienteLabel.setBounds(36, 268, 90, 22);
         add(codigoClienteLabel);
 
@@ -86,12 +86,12 @@ public class AltaClienteVista extends JPanel {
         add(correotextField);
         correotextField.setColumns(10);
 
-        senalDineroField = new JTextField(); // Campo de entrada para la señal de dinero
+        senalDineroField = new JTextField();
         senalDineroField.setBounds(128, 237, 86, 20);
         add(senalDineroField);
         senalDineroField.setColumns(10);
 
-        codigoClienteField = new JTextField(); // Campo de entrada para el código de cliente
+        codigoClienteField = new JTextField(); 
         codigoClienteField.setBounds(128, 269, 86, 20);
         add(codigoClienteField);
         codigoClienteField.setColumns(10);
@@ -100,10 +100,10 @@ public class AltaClienteVista extends JPanel {
         altaClienteButton.setBounds(187, 320, 89, 23);
         add(altaClienteButton);
         
-        JLabel ImagenAltaClienteLabel = new JLabel("\r\n");
-        ImagenAltaClienteLabel.setIcon(new ImageIcon(System.getProperty("user.home") + "\\git\\estudioTataujes\\EstudioTatuajes\\IMG\\fotoEmpresa (1).jpg)"));
-        ImagenAltaClienteLabel.setBounds(270, 59, 190, 250);
-        add(ImagenAltaClienteLabel);
+        JLabel PrintAltaClienteLabel = new JLabel("");
+        PrintAltaClienteLabel.setIcon(new ImageIcon(System.getProperty("user.home") + "\\git\\estudioTataujes\\EstudioTatuajes\\IMG\\CuchilloCaraChica (1).jpg"));
+        PrintAltaClienteLabel.setBounds(292, 70, 162, 221);
+        add(PrintAltaClienteLabel);
 
         altaClienteButton.addActionListener(new ActionListener() {
 

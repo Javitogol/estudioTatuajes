@@ -24,10 +24,10 @@ public class Tatuador {
         this.codigoTatuador = codigoTatuador;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.estado = "activo"; // Estado inicial por defecto
+        this.estado = "activo";
     }
 
-    // Métodos getter y setter para los atributos
+
 
     public String getNombre() {
         return nombre;

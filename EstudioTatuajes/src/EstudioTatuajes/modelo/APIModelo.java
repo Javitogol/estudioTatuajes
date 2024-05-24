@@ -23,7 +23,7 @@ public class APIModelo {
 
     public String[][] consultarClientes() {
         ArrayList<Cliente> clientes = estudio.consultaCliente();
-        String[][] clientesArray = new String[clientes.size()][7]; // Cambiar tamaño si es necesario
+        String[][] clientesArray = new String[clientes.size()][7]; 
         for (int i = 0; i < clientes.size(); i++) {
             clientesArray[i][0] = clientes.get(i).getDni();
             clientesArray[i][1] = clientes.get(i).getNombre();

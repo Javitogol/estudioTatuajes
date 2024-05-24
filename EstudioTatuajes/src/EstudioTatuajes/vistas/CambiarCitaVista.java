@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import EstudioTatuajes.controlador.CambiarCitaControlador;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class CambiarCitaVista extends JPanel {
 
@@ -117,6 +118,11 @@ public class CambiarCitaVista extends JPanel {
         JButton cambiarCitaButton = new JButton("Cambiar Cita");
         cambiarCitaButton.setBounds(187, 380, 120, 23);
         add(cambiarCitaButton);
+        
+        JLabel PrintCambiarCitaLabel = new JLabel("");
+        PrintCambiarCitaLabel.setIcon(new ImageIcon(System.getProperty("user.home") + "\\git\\estudioTataujes\\EstudioTatuajes\\IMG\\CuchilloCaraChica (1).jpg"));
+        PrintCambiarCitaLabel.setBounds(318, 106, 170, 239);
+        add(PrintCambiarCitaLabel);
 
         cambiarCitaButton.addActionListener(new ActionListener() {
 

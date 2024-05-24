@@ -3,6 +3,7 @@ package EstudioTatuajes.vistas;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -47,7 +48,7 @@ public class MarcarEstadoTatuadorVista extends JPanel {
         JButton marcarEstadoButton = new JButton("Marcar Estado");
         marcarEstadoButton.setBounds(150, 150, 150, 23);
         add(marcarEstadoButton);
-
+        
         marcarEstadoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

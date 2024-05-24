@@ -44,7 +44,6 @@ public class EliminarTatuadorVista extends JPanel {
 
                 if (!codigoTatuador.isEmpty()) {
                     try {
-                        // Aquí puedes llamar al controlador para eliminar el tatuador
                         System.out.println("Tatuador eliminado correctamente.");
                     } catch (NumberFormatException ex) {
                         System.out.println("Error: El código del tatuador debe ser un número.");

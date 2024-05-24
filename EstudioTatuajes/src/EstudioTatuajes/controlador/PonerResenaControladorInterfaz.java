@@ -1,5 +1,5 @@
 package EstudioTatuajes.controlador;
 
-public class PonerResenaControladorInterfaz {
-
+public interface PonerResenaControladorInterfaz {
+    void ponerResena(String dni, String resena);
 }

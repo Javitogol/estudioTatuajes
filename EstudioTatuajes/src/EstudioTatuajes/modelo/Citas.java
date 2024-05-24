@@ -16,16 +16,16 @@ public class Citas {
     }
 
     public Citas(String nuevaFecha, String nuevaHora) {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public void ConfirmarCita() {
-        // Implementación específica
+
         System.out.println("Cita confirmada: " + toString());
     }
 
     public void CancelarCita() {
-        // Implementación específica
+
         System.out.println("Cita cancelada: " + toString());
     }
 
@@ -43,7 +43,7 @@ public class Citas {
     }
 
     public void CalcularDuracion() {
-        // Implementación específica
+
         System.out.println("Calculando duración de la cita...");
     }
 

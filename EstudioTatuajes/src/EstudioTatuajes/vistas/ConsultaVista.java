@@ -40,7 +40,7 @@ public class ConsultaVista extends JPanel {
         tablaClientes.setGridColor(Color.BLACK);
 
         JScrollPane scrollPane = new JScrollPane(tablaClientes);
-        scrollPane.setBounds(29, 75, 400, 200); // ajusté la posición vertical para que la tabla sea visible
+        scrollPane.setBounds(29, 75, 400, 200);
         add(scrollPane);
     }
 }

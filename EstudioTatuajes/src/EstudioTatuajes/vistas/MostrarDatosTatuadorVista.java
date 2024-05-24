@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import EstudioTatuajes.modelo.Tatuador;
@@ -87,6 +89,11 @@ public class MostrarDatosTatuadorVista extends JPanel {
         JButton MostrarDatosButton = new JButton("MOSTRAR DATOS");
         MostrarDatosButton.setBounds(165, 302, 140, 22);
         add(MostrarDatosButton);
+        
+        JLabel PrintMostrarDatosLabel = new JLabel("");
+        PrintMostrarDatosLabel.setIcon(new ImageIcon("C:\\Users\\Javi\\Downloads\\cuchillos (1).jpg"));
+        PrintMostrarDatosLabel.setBounds(288, 42, 166, 256);
+        add(PrintMostrarDatosLabel);
 
         MostrarDatosButton.addActionListener(new ActionListener() {
             @Override

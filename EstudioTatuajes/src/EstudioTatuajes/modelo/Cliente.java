@@ -25,7 +25,6 @@ public class Cliente {
         this.citas = new ArrayList<>();
     }
 
-    // Getters
     public String getDni() {
         return dni;
     }
@@ -58,7 +57,7 @@ public class Cliente {
         return citas;
     }
 
-    // Setters
+
     public void setDni(String dni) {
         this.dni = dni;
     }
@@ -87,7 +86,6 @@ public class Cliente {
         this.codigoCliente = codigoCliente;
     }
 
-    // Métodos para manejar citas
     public void addCita(Citas nuevaCita) {
         this.citas.add(nuevaCita);
     }

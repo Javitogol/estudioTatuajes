@@ -7,14 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextField;
 import EstudioTatuajes.controlador.PonerResenaControlador;
-import EstudioTatuajes.controlador.PonerResenaControladorInterfaz;
 import javax.swing.JButton;
 
 public class PonerResenaVista extends JPanel {
 
     private static final long serialVersionUID = 1L;
     private JTextField dniTestField;
-    private JTextField resenaTextField; // Nuevo campo para la reseña
+    private JTextField resenaTextField; 
 
     /**
      * Create the panel.
@@ -31,7 +30,7 @@ public class PonerResenaVista extends JPanel {
         dniLabel.setBounds(48, 70, 90, 22);
         add(dniLabel);
 
-        JLabel resenaLabel = new JLabel("Reseña:"); // Etiqueta para la reseña
+        JLabel resenaLabel = new JLabel("Reseña:");
         resenaLabel.setBounds(48, 103, 90, 22);
         add(resenaLabel);
 
@@ -40,7 +39,7 @@ public class PonerResenaVista extends JPanel {
         add(dniTestField);
         dniTestField.setColumns(10);
 
-        resenaTextField = new JTextField(); // Campo de entrada para la reseña
+        resenaTextField = new JTextField();
         resenaTextField.setBounds(118, 104, 251, 111);
         add(resenaTextField);
         resenaTextField.setColumns(10);
@@ -75,7 +74,7 @@ public class PonerResenaVista extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 System.out.println("Poniendo reseña...");
                 String dni = dniTestField.getText();
-                String resena = resenaTextField.getText(); // Obtener la reseña
+                String resena = resenaTextField.getText(); 
 
                 PonerResenaControlador ponerResena = new PonerResenaControlador();
                 ponerResena.ponerResena(dni, resena);
