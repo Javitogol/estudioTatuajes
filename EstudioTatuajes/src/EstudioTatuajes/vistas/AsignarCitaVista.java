@@ -22,10 +22,10 @@ public class AsignarCitaVista extends JPanel {
     public AsignarCitaVista() {
         setLayout(null);
         
-        JLabel lblNewLabel = new JLabel("Asignar Cita");
-        lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        lblNewLabel.setBounds(157, 33, 107, 22);
-        add(lblNewLabel);
+        JLabel asignarCitaLabel = new JLabel("Asignar Cita");
+        asignarCitaLabel.setFont(new Font("Stencil", Font.PLAIN, 18));
+        asignarCitaLabel.setBounds(157, 33, 146, 20);
+        add(asignarCitaLabel);
         
         JLabel lblDni = new JLabel("DNI:");
         lblDni.setBounds(78, 87, 46, 14);
